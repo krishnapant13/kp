@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useColor } from "./ColorContext";
 import { BsBook } from "react-icons/bs";
-import PostDetails from "./PostDetails";
 
 const Post = ({ date, month, title, description, url}) => {
   const { color } = useColor();
