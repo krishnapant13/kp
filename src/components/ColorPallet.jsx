@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { IoColorFill } from "react-icons/io5";
 import { MdSettings } from "react-icons/md";
 import { AiFillCaretDown } from "react-icons/ai";
@@ -11,8 +11,30 @@ const ColorPallet = () => {
   const handleColor = (color) => {
     handleColorChange(color);
   };
+
+  const palletRef = useRef(null);
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (
+        pallet &&
+        palletRef.current &&
+        !palletRef.current.contains(e.target) &&
+        e.target.tagName !== "svg"
+      ) {
+        showPallet(false);
+      }
+    };
+    if (pallet) {
+      window.addEventListener("click", handleOutsideClick);
+    }
+    return () => {
+      window.removeEventListener("click", handleOutsideClick);
+    };
+  }, [pallet]);
+
   return (
     <div
+      ref={palletRef}
       className={`fixed bottom-[1em] left-[1em] p-2 bg-[#333] rounded-full transition-all duration-1000`}
     >
       {pallet ? (

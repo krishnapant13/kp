@@ -13,6 +13,9 @@ const Opening = () => {
         setWidth(width + 1);
         if (width === 99) {
           setShutter(true);
+          setTimeout(() => {
+            setIsBottomDivVisible(false);
+          }, 500);
         }
       } else {
         clearInterval(interval);
@@ -24,12 +27,6 @@ const Opening = () => {
     };
   }, [width]);
 
-  const handleTransitionEnd = () => {
-    if (shutter) {
-      setIsBottomDivVisible(false);
-    }
-  };
-
   return (
     <div>
       <div
@@ -37,7 +34,7 @@ const Opening = () => {
           shutter ? "translate-y-[-100%]" : "translate-y-0"
         }`}
       >
-        <h1 className="font-[600] font-Poppins z-[3] w-full text-[3em] absolute bottom-12 text-center m-auto">
+        <h1 className="font-[600] text-white font-Poppins z-[3] w-full text-[3em] absolute md:bottom-12 bottom-[2em] text-center m-auto">
           KRISHNA
         </h1>
       </div>
@@ -56,9 +53,8 @@ const Opening = () => {
           className={`bg-black z-[2] h-[50vh] w-full absolute bottom-0 transition-transform duration-500 ${
             shutter ? "translate-y-[100%]" : "translate-y-0"
           }`}
-          onTransitionEnd={handleTransitionEnd}
         >
-          <h1 className="font-[600] font-Poppins z-[3] w-full text-[3em] absolute top-12 text-center m-auto">
+          <h1 className="font-[600] text-white font-Poppins z-[3] w-full text-[3em] absolute md:top-12 top-[2em] text-center m-auto">
             PANT
           </h1>
         </div>

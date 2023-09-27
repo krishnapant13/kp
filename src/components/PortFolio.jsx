@@ -15,11 +15,11 @@ const PortFolio = () => {
   return (
     <div>
       <div className="flex justify-center items-center pt-10">
-        <h1 className="text-[55px] font-[900] font-Poppins text-white m-2">
+        <h1 className="md:text-[55px] text-[45px] font-[900] font-Poppins text-white m-2">
           MY
         </h1>
         <h1
-          className="text-[55px] font-[900] font-Poppins m-2"
+          className="md:text-[55px] text-[45px] font-[900] font-Poppins m-2"
           style={{ color: color }}
         >
           PORTFOLIO

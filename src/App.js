@@ -8,6 +8,7 @@ import ColorPallet from "./components/ColorPallet";
 import Navigators from "./components/Navigators";
 import Opening from "./components/Opening";
 import Contact from "./components/Contact.jsx";
+import Blog from "./components/Blog.jsx";
 function App() {
   return (
     <ColorProvider>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<PortFolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </div>
       <Navigators />

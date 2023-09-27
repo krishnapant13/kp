@@ -17,7 +17,7 @@ const About = () => {
   const { color } = useColor();
   return (
     <div className="animate-slide-in-right  800px:p-5 items-center">
-      <h5 className=" font-900 text-[2em] 800px:text-[4em] font-Poppins">
+      <h5 className=" font-[800] text-[2em] 800px:text-[4em] font-Poppins mt-4 md:mt-0">
         <span> ABOUT</span> <span style={{ color: color }}>ME</span>
       </h5>
       <div className="flex justify-center items-center">
@@ -33,7 +33,8 @@ const About = () => {
           style={{ backgroundColor: color }}
         />
       </div>
-      <div className="pt-10 821px:pl-[8em] pl-[0.2em]">
+      {/* details div */}
+      <div className="md:h-[70vh] md:flex md:justify-center md:items-center 821px:pl-[8em] pl-[0.2em]">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12} md={6}>
             <div
