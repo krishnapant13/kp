@@ -130,13 +130,13 @@ const Navigators = () => {
               color={active === 3 ? color : "white"}
             />
           </Link>
-          <Link to="/blog" onClick={() => setActiveIndex(4)}>
+          <div /* to="/blog" onClick={() => setActiveIndex(4)} */ className="opacity-30">
             <TbBrandBlogger
               size={17}
               className="m-2"
               color={active === 4 ? color : "white"}
             />
-          </Link>
+          </div>
         </div>
       )}
     </div>
